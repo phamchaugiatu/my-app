@@ -1,11 +1,14 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, View, TouchableOpacity } from "react-native";
 import Login from "../../assets/login.png";
 
 export default function ButtonLoginItem(props) {
+  const { onPress } = props;
   return (
     <View>
-      <Image source={Login} style={styles.login} />
+      <TouchableOpacity onPress={onPress}>
+        <Image source={Login} style={styles.login} />
+      </TouchableOpacity>
     </View>
   );
 }

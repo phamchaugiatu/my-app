@@ -1,20 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
 import LogoItem from "../components/login/logo";
 import PlcItem from "../components/login/plc";
 import AutomationIteam from "../components/login/automation";
 import ButtonLoginItem from "../components/login/buttonLogin";
 
 export default function Login(props) {
+  const { navigation } = props;
   return (
     <View style={styles.container}>
       <LogoItem />
       <PlcItem />
       <AutomationIteam />
-      <TouchableOpacity>
-        <ButtonLoginItem />
-      </TouchableOpacity>
-      <StatusBar style="auto" />
+      <ButtonLoginItem onPress={() => navigation.navigate("Home")} />
     </View>
   );
 }
